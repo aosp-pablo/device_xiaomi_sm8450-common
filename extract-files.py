@@ -88,8 +88,6 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'(?s)(<MediaCodecs.*?>)',r'\1\n    <Include href="media_codecs_dolby_audio.xml" />'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libhidlbase_shim.so'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
     (
         'vendor/lib64/libagm.so',
         'vendor/lib64/libmcs.so',
@@ -116,6 +114,13 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('51 05 00 94', '1F 20 03 D5'),
     'system_ext/etc/seccomp_policy/tcmd.policy': blob_fixup()
         .add_line_if_missing('lseek: 1'),
+    'system/framework/WfdCommon.jar': blob_fixup()
+        .apktool_patch('blob-patches/WfdCommon.patch'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V4-cpp.so',
+            'android.media.audio.common.types-V5-cpp.so',
+        ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
