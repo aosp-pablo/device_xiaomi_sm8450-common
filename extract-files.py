@@ -114,6 +114,8 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('F4 05 00 94', '1F 20 03 D5')
         .sig_replace('63 05 00 94', '1F 20 03 D5')
         .sig_replace('51 05 00 94', '1F 20 03 D5'),
+    'system_ext/etc/seccomp_policy/tcmd.policy': blob_fixup()
+        .add_line_if_missing('lseek: 1'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
