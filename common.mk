@@ -290,8 +290,7 @@ PRODUCT_PACKAGES += \
     FrameworksResXiaomi \
     LineageResXiaomi \
     SettingsProviderResXiaomi \
-    SettingsResXiaomi \
-    WifiResTarget_spf
+    SettingsResXiaomi
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
