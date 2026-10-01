@@ -58,6 +58,13 @@ NonUiNotifier::~NonUiNotifier() {
 }
 
 void NonUiNotifier::notify() {
+    Result res;
+
+    if (mQueue == nullptr) {
+        LOG(ERROR) << "failed to initialize sensor queue";
+        mActive = false;
+        return;
+    }
 
     // Enable states of touchscreen sensors
     const std::vector<const char*> paths = {
@@ -90,11 +97,13 @@ void NonUiNotifier::notify() {
             enabled = enabled || readBool(pollfds[i].fd);
         }
         if (enabled) {
-            if (!mQueue->enableSensor(mSensorHandle, 20000 /* sample period */, 0 /* latency */).isOk()) {
+            res = mQueue->enableSensor(mSensorHandle, 20000 /* sample period */, 0 /* latency */);
+            if (res != Result::OK) {
                 LOG(ERROR) << "failed to enable sensor";
             }
         } else {
-            if (!mQueue->disableSensor(mSensorHandle).isOk()) {
+            res = mQueue->disableSensor(mSensorHandle);
+            if (res != Result::OK) {
                 LOG(DEBUG) << "failed to disable sensor";
             }
         }
