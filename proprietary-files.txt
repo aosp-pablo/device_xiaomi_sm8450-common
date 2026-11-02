@@ -2,90 +2,24 @@
 
 # ADSP
 vendor/bin/adsprpcd
-vendor/bin/audioadsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
-vendor/etc/init/vendor.qti.audio-adsprpc-service.rc:vendor/etc/init/vendor.qti.audio-adsprpc-service_marble.rc
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
-# Audio configs
-vendor/etc/audio/sku_ukee/adsp_sleep_monitor.conf
-vendor/etc/audio/sku_ukee/audio_effects.conf
-vendor/etc/audio/sku_ukee/mixer_paths_overlay_dynamic.xml
-vendor/etc/audio/sku_ukee/mixer_paths_overlay_static.xml
-vendor/etc/audio/sku_ukee/mixer_paths_ukee_cdp.xml
-vendor/etc/audio/sku_ukee/mixer_paths_ukee_mtp.xml
-vendor/etc/audio/sku_ukee/mixer_paths_ukee_qrd.xml
-vendor/etc/audio/sku_ukee/resourcemanager_ukee_cdp.xml
-vendor/etc/audio/sku_ukee/resourcemanager_ukee_mtp.xml
-vendor/etc/audio/sku_ukee/resourcemanager_ukee_qrd.xml
-vendor/etc/audio/sku_ukee/resourcemanager_upd.xml
-vendor/etc/audio/sku_ukee/resourcemanager_waipio_mtp.xml
-vendor/etc/audio_cloud_control_white_list.xml
-vendor/etc/audio_policy_engine_configuration_mi.xml:vendor/etc/audio_policy_engine_configuration.xml
-vendor/etc/audio_policy_engine_default_stream_volumes.xml
-vendor/etc/audio_policy_engine_product_strategies.xml
-vendor/etc/audio_policy_engine_stream_volumes.xml
-vendor/etc/audio_diag.cfg
-vendor/etc/backend_conf.xml
-vendor/etc/card-defs.xml
-vendor/etc/microphone_characteristics.xml
+# Audio
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
-vendor/etc/kvh2xml.xml
-vendor/etc/usecaseKvManager.xml
-
-# Audio libraries
-vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service
-vendor/etc/init/vendor.qti.hardware.AGMIPC@1.0-service.rc:vendor/etc/init/vendor.qti.hardware.AGMIPC@1.0-service_marble.rc
-vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
-vendor/lib64/libagm.so
-vendor/lib64/libagm_compress_plugin.so
-vendor/lib64/libagm_mixer_plugin.so
-vendor/lib64/libagm_pcm_plugin.so
-vendor/lib64/libagmclient.so
-vendor/lib64/libagmmixer.so
-vendor/lib64/libar-acdb.so
-vendor/lib64/libar-gpr.so
-vendor/lib64/libar-gsl.so
-vendor/lib64/libar-pal.so
-vendor/lib64/libats.so
-vendor/lib64/libawcal.so
-vendor/lib64/libbatterylistener.so
-vendor/lib64/libfmpal.so
-vendor/lib64/libkaraokepal.so
-vendor/lib64/liblx-ar_util.so
-vendor/lib64/liblx-osal.so
-vendor/lib64/libmcs.so
-vendor/lib64/libpalclient.so
-vendor/lib64/libqtigefar.so
-vendor/lib64/libsndcardparser.so
-vendor/lib64/libxlog.so
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
-
-# Audio HAL
-vendor/lib64/hw/audio.primary.taro.so
-vendor/lib64/hw/gyro_fusion_interface.so
-vendor/lib64/hw/sound_trigger.primary.taro.so
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libaudiocloudctrl.so
-vendor/lib64/libaudioroute_ext.so
-vendor/lib64/libmmhardware.so
-vendor/lib64/libresampler.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libeai_fixed.so
-vendor/lib64/libeai_float.so
-vendor/lib64/liblistensoundmodel2vendor.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
+vendor/lib64/libmcs.so
+vendor/lib64/libqtigefar.so
 
 # Audio effects
 vendor/lib64/soundfx/libasphere.so
@@ -111,10 +45,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib64/lib_bt_aptx.so
-vendor/lib64/lib_bt_ble.so
-vendor/lib64/lib_bt_bundle.so
-vendor/lib64/lib_bt_lhdc.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbtnv.so

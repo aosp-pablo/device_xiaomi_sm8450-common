@@ -9,8 +9,6 @@ include vendor/xiaomi/sm8450-common/BoardConfigVendor.mk
 
 COMMON_PATH := device/xiaomi/sm8450-common
 
-BUILD_BROKEN_DUP_RULES := true
-
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
@@ -42,8 +40,9 @@ AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 AUDIO_FEATURE_ENABLED_PAL_HIDL := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 
-TARGET_USES_QCOM_MM_AUDIO := false
-TARGET_PROVIDES_AUDIO_HAL = true
+BOARD_SUPPORTS_OPENSOURCE_STHAL := true
+
+TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := taro
@@ -215,8 +214,6 @@ $(foreach sku, $(call to-upper, $(DEVICE_MANIFEST_SKUS)), \
         $(COMMON_PATH)/vintf/manifest.xml \
         $(COMMON_PATH)/vintf/manifest_xiaomi.xml \
         $(if $(TARGET_NFC_SUPPORTED_SKUS),$(COMMON_PATH)/vintf/manifest_no_nfc.xml,) \
-        hardware/qcom-caf/sm8450/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-        hardware/qcom-caf/sm8450/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml \
     ))
 
 ifneq ($(TARGET_NFC_SUPPORTED_SKUS),)
